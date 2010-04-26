@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layman>
+    <overlay contact = "bor@univ.kiev.ua"
+            name = "game-server-stuff"
+            src = "git://github.com/bor/gentoo-game-overlay.git"
+            type = "git"
+            status = "unofficial">
+        <link>http://github.com/bor/gentoo-game-overlay/</link>
+        <description>
+            A Gentoo overlay with some game server stuff ebuilds
+        </description>
+    </overlay>
+</layman>
