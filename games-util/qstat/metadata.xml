@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd></herd>
+	<maintainer>
+		<email>bor@univ.kiev.ua</email>
+		<name>Sergiy Borodych</name>
+	</maintainer>
+	<longdescription lang="en">
+		QStat is a command-line utility for collecting real-time statisticsfrom
+		on-line game servers. The games supported are generally limitedto the
+		first-person-shooter genre (Quake, Half-Life, Unreal,etc). Statistics
+		may be output in a variety of form.
+	</longdescription>
+</pkgmetadata>
+

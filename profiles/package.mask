@@ -1,0 +1,3 @@
+# Sergiy Borodych (26 Apr 2010)
+# mask svn version
+=games-util/qstat-9999
