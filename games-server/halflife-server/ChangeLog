@@ -1,0 +1,11 @@
+# ChangeLog for games-server/halflife-server
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*halflife-server-3.1.1.1e (27 Apr 2010)
+
+  27 Apr 2010; Sergiy Borodych <bor@univ.kiev.ua>
+  +halflife-server-3.1.1.1e.ebuild, +files/hlds, +files/hlds.conf.d,
+  +files/hlds.rc, +metadata.xml:
+  add ebuild for halflife server (pre steam version)
+
