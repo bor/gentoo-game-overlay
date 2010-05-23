@@ -1,0 +1,8 @@
+# ChangeLog for games-server/halflife-steam
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Aug 2008; Sergiy Borodych <bor@univ.kiev.ua> +metadata.xml,
+  +halflife-steam-2.0.ebuild:
+  copy ebuild from oficial portage but add ~amd64
+
