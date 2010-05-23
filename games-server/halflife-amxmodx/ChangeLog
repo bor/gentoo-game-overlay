@@ -1,0 +1,10 @@
+# ChangeLog for games-server/halflife-amxmodx
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*halflife-amxmodx-1.8.1 (23 May 2010)
+
+  23 May 2010; Sergiy Borodych <bor@univ.kiev.ua>
+  +halflife-amxmodx-1.8.1.ebuild, +metadata.xml:
+  move from old svn repo
+

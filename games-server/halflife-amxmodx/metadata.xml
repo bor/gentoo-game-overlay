@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd></herd>
+	<maintainer>
+		<email>bor@univ.kiev.ua</email>
+		<name>Sergiy Borodych</name>
+	</maintainer>
+	<longdescription lang="en">
+		AMX Mod X is a versatile Half-Life metamod plugin which is targetted toward server administration.
+		It has a wide array of scripting capabilities so people can write
+		"plugins", or files which add on to a mod's functionality.
+		Plugins can take form in administrative services (adding new admin
+		commands), statistics generation (StatsX), fun additions (godmode, etc),
+		gameplay changes (WC3, CSDM), and much, much more!
+		You can also write modules to expand the functionality of AMX Mod X and
+		add to the scripting language.
+	</longdescription>
+	<use>
+		<flag name="hl-cstrike">Installs Counter-Strike Addon content</flag>
+		<flag name="hl-dod">Installs Day of Defeat Addon content</flag>
+		<flag name="hl-esf">Installs Earth's Special Forces Addon content</flag>
+		<flag name="hl-ns">Installs Natural Selection Addon content</flag>
+		<flag name="hl-tfc">Installs Team Fortress Classic Addon content</flag>
+		<flag name="hl-ts">Installs The Specialists Addon content</flag>
+		<flag name="src">Try compile from source</flag>
+	</use>
+</pkgmetadata>
