@@ -1,0 +1,12 @@
+# ChangeLog for games-server/halflife-metamod-p
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*halflife-metamod-p-1.19_p32 (23 May 2010)
+
+  23 May 2010; Sergiy Borodych <bor@univ.kiev.ua>
+  +halflife-metamod-p-1.19_p32.ebuild,
+  +files/metamod-p-1.19_p32-asm-page-h.patch, +files/config.ini,
+  +files/plugins.ini, +metadata.xml:
+  move from old svn repo
+

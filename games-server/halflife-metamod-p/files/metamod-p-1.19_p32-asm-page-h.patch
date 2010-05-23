@@ -1,0 +1,11 @@
+--- metamod-p-1.19p32/metamod/osdep_linkent_linux.cpp.orig 2007-09-29 19:47:45.000000000 +0200
++++ metamod-p-1.19p32/metamod/osdep_linkent_linux.cpp      2007-09-29 19:48:45.000000000 +0200
+@@ -37,7 +37,7 @@
+ 
+ #include <dlfcn.h>
+ #include <sys/mman.h>
+-#include <asm/page.h>
++#include <sys/user.h>           /* PAGE_SIZE & PAGE_MASK */
+ #define PAGE_ALIGN(addr) (((addr)+PAGE_SIZE-1)&PAGE_MASK)
+ #include <pthread.h>
+ #include <link.h>

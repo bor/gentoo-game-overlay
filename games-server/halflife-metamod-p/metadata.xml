@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd></herd>
+	<maintainer>
+		<email>bor@univ.kiev.ua</email>
+		<name>Sergiy Borodych</name>
+	</maintainer>
+	<longdescription lang="en">
+		Metamod is a plugin/DLL manager that sits between the Half-Life Engine
+		and an HL Game mod, allowing the dynamic loading/unloading of mod-like
+		DLL plugins to add functionality to the HL server or game mod. Metamod-P
+		is enhanced version of Metamod. It has dynamic link-entities and
+		automatic detection of Mod DLL and other improvement to allow it work
+		with future Half-Life Engine updates and new Mods and updates.
+	</longdescription>
+    <use>
+		<flag name="src">Try compile from source</flag>
+	</use>
+</pkgmetadata>
+
