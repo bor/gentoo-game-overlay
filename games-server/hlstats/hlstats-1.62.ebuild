@@ -19,6 +19,8 @@ SLOT="0"
 DEPEND=""
 RDEPEND="dev-db/mysql
 	dev-lang/perl
+	dev-perl/Config-Tiny
+	dev-perl/DBD-mysql
 	virtual/httpd-php
 	www-servers/apache"
 
@@ -54,30 +56,26 @@ src_install() {
 			web/index.php \
 		|| die "sed php failed"
 	doins -r web/*
+	newins web/hlstatsinc/hlstats.conf.example.php hlstatsinc/hlstats.conf.php
 	webapp_src_install
 }
 
 pkg_postinst() {
 	games_pkg_postinst
 	einfo "To setup:"
-	einfo " 1. Start up the server and after go to"
-	einfo "		http://1.2.3.4/hlstats/install/index.php"
-	einfo "      (replace 1.2.3.4 with the IP of the server hlstats is running on)"
-	einfo " 2. Edit the cfg files of the game servers you want to track ..."
-	einfo "     add these lines to your config file:"
-	einfo "      log on"
-	einfo "      logaddress 1.2.3.4 27500"
-	einfo "      (replace 1.2.3.4 with the IP of the server hlstats is running on)"
-	einfo " 3. \`rc-update add hlstats default\`"
-	einfo " 4. \`/etc/init.d/hlstats start\`"
-	einfo " 5. If you want daily awards, setup a cronjob to run hlstats-awards.pl"
-	einfo "     for example, run \`crontab -e\` and add this entry:"
-	einfo "      30 00 * * *     ${GAMES_BINDIR}/hlstats-awards.pl"
-	einfo " 6. Finally !  Start up the server and after a while goto"
-	einfo "      http://1.2.3.4/hlstats/hlstats.php"
+	einfo "	Please follow instructions"
+	einfo "		http://www.hlstats-community.org/Documentation/Installation.html"
+	einfo " But deamon you can run like this"
+	einfo "     $ rc-update add hlstats default"
+	einfo "		$ /etc/init.d/hlstats start"
+	einfo " If you want daily awards, setup a cronjob to run hlstats-awards.pl"
+	einfo "  for example, run \`crontab -e\` and add this entry:"
+	einfo "   	30 00 * * *     ${GAMES_BINDIR}/hlstats-awards.pl"
 	einfo "To update:"
-	einfo " 1. \`mysql hlstats < ${GAMES_DATADIR}/${PN}/upgrade_from_VERSION.sql\`"
-	einfo "		replace 'VERSION' with previous installed version number,"
-	einfo "		make this only if sql file exists for previous version"
+	einfo "	Please follow instructions"
+	einfo " 	http://www.hlstats-community.org/Documentation/Update.html"
+	einfo " Ussually for this need just run:"
+	einfo "		$ mysql hlstats < ${GAMES_DATADIR}/${PN}/upgrade_from_VERSION.sql"
+	einfo "	replace 'VERSION' with previous installed version number,"
 	webapp_pkg_postinst
 }
