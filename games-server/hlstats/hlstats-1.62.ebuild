@@ -60,7 +60,6 @@ src_install() {
 		|| die "sed php failed"
 	doins -r web/*
 	insinto ${MY_HTDOCSDIR}/hlstatsinc
-	newins web/hlstatsinc/hlstats.conf.example.php hlstats.conf.php
 	webapp_src_install
 }
 
