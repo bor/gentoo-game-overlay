@@ -38,9 +38,11 @@ src_install() {
 	dobin "${FILESDIR}/hlstats"
 	dosed "s:GENTOO_DIR:${GAMES_BINDIR}:" /usr/bin/hlstats
 	newinitd "${FILESDIR}/hlstats.init.d" hlstats
+	# some dirty hacks
 	sed -i \
-		-e "s:^\$opt_libdir = dirname(__FILE__);:\$opt_libdir = \"$(games_get_libdir)/${PN}/\";:" \
-		-e "s:^\$opt_configfile = \"\$opt_libdir:\$opt_configfile = \"${GAMES_SYSCONFDIR}:" \
+		-e "s:^\(my \)\?\$opt_libdir = dirname(__FILE__);:\1\$opt_libdir = \"$(games_get_libdir)/${PN}/\";:" \
+		-e "s:^\(my \)\?\$opt_configfile = \"\$opt_libdir:\1\$opt_configfile = \"${GAMES_SYSCONFDIR}:" \
+		-e "s:\$opt_libdir/hlstats.conf.ini:${GAMES_SYSCONFDIR}/hlstats.conf.ini:" \
 		daemon/*.pl || die "sed pl failed"
 	dogamesbin daemon/*.pl || die "dogamesbin failed"
 	insinto "$(games_get_libdir)"/${PN}
@@ -68,18 +70,18 @@ pkg_postinst() {
 	einfo "		http://www.hlstats-community.org/Documentation/Installation.html"
 	einfo " But deamon you can run like this"
 	einfo "     $ rc-update add hlstats default"
-	einfo "		$ /etc/init.d/hlstats start"
+	einfo "     $ /etc/init.d/hlstats start"
 	einfo " If you want daily awards, setup a cronjob to run hlstats-awards.pl"
 	einfo "  for example, run \`crontab -e\` and add this entry:"
-	einfo "   	30 00 * * *     ${GAMES_BINDIR}/hlstats-awards.pl"
-        einfo " To active the player activity stats, setup a cronjob to run player-activity.pl"
-	einfo "  for example, run \`crontab -e\` and add this entry:"
-	einfo "   	35 00 * * *     ${GAMES_BINDIR}/player-activity.pl"
+	einfo "     10 00 * * *     ${GAMES_BINDIR}/hlstats-awards.pl"
+	einfo " To active the player activity stats, setup a cronjob to run player-activity.pl"
+	einfo "  for example, add to crontab this entry:"
+	einfo "     15 00 * * *     ${GAMES_BINDIR}/player-activity.pl"
 	einfo "To update:"
 	einfo "	Please follow instructions"
 	einfo " 	http://www.hlstats-community.org/Documentation/Update.html"
 	einfo " Ussually for this need just run:"
-	einfo "		$ mysql hlstats < ${GAMES_DATADIR}/${PN}/upgrade_from_VERSION.sql"
+	einfo "     $ mysql hlstats < ${GAMES_DATADIR}/${PN}/upgrade_from_VERSION.sql"
 	einfo "	replace 'VERSION' with previous installed version number,"
 	webapp_pkg_postinst
 }
