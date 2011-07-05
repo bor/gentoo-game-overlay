@@ -34,7 +34,7 @@ pkg_setup() {
 src_install() {
 	webapp_src_preinst
 	insinto "${GAMES_SYSCONFDIR}"
-	newins daemon/hlstats.conf.ini.example hlstats.conf
+	newins daemon/hlstats.conf.ini.example hlstats.conf.ini
 	dobin "${FILESDIR}/hlstats"
 	dosed "s:GENTOO_DIR:${GAMES_BINDIR}:" /usr/bin/hlstats
 	newinitd "${FILESDIR}/hlstats.init.d" hlstats
@@ -47,6 +47,7 @@ src_install() {
 	dogamesbin daemon/*.pl || die "dogamesbin failed"
 	insinto "$(games_get_libdir)"/${PN}
 	doins daemon/*.{pm,plib}
+	doins -r daemon/geoip
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins upgrade/*.sql
 	dodoc ChangeLog
