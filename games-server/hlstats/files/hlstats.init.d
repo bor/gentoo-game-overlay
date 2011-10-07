@@ -11,7 +11,7 @@ depend() {
 start() {
     ebegin "Starting hlstats"
     start-stop-daemon --start \
-        -a /usr/bin/hlstats -b -n hlstats \
+        --exec /usr/bin/hlstats -b -n hlstats \
         -m --pidfile /var/run/hlstats.pid
     eend $?
 }
